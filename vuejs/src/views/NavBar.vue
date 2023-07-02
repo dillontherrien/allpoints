@@ -5,41 +5,26 @@ import { RouterLink } from 'vue-router'
 <template>
   <header>
     <div class="header">
-      <router-link to="/" class="logo">
-        <img alt="AllPoints logo" src="@/assets/logo.png" />
-      </router-link>
-
+      <img alt="AllPoints logo" class="logo" src="@/assets/logo.png" />
       <div class="menu-icon"><font-awesome-icon icon="fa-solid fa-bars" size="2xl" /></div>
 
       <nav class="nav">
-        <RouterLink :class="navItemClass" to="/">Home</RouterLink>
-        <RouterLink :class="navItemClass" to="/about">About Us</RouterLink>
-        <RouterLink :class="navItemClass" to="/services">Our Services</RouterLink>
-        <RouterLink :class="navItemClass" to="/contact">Contact Us</RouterLink>
+        <RouterLink class="nav-item" to="/home">Home</RouterLink>
+        <RouterLink class="nav-item" to="/about">About Us</RouterLink>
+        <RouterLink class="nav-item" to="#">Our Services</RouterLink>
+        <RouterLink class="nav-item" to="/about">Contact Us</RouterLink>
       </nav>
     </div>
     <!-- <video autoplay="" muted="" loop=""><source src="https://www.cageapp.com/public-cdn/site/production/assets/f40af30b6264395dee8a756b76bae75ca2e5d4ab/videos/cage-hero_background-1.mp4" type="video/mp4"></video> -->
   </header>
-  <RouterView />
+  <RouterView/>
 </template>
-
-<script lang="ts">
-export default {
-  computed: {
-    navItemClass() {
-      return this.$route.path === '/' ? 'nav-item white' : 'nav-item black'
-    }
-  }
-}
-</script>
 
 <style scoped>
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 70px;
-  z-index: 2;
 }
 
 .nav {
@@ -52,51 +37,31 @@ export default {
 
 .nav-item {
   margin-left: 20px;
-  margin-top: 13px;
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-top: 10px;
   font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  text-align: center;
-  height: 60%;
-}
-
-.white {
   color: white;
+  text-align: center;
+  height: 100%;
 }
 
-.white:hover {
-  color: rgb(219, 219, 219);
-}
-.black {
-  color: black;
+.nav-item:hover{
+    color: rgb(173, 173, 173);
 }
 
-.black:hover {
-  color: rgb(107, 107, 107);
+.nav-item:active{
+    color: rgb(173, 173, 173);
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
   max-width: 250px;
-  max-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Styles for larger screens */
 .menu-icon {
   display: none; /* Hide the menu icon by default on larger screens */
-  margin-right: 1rem;
 }
 
 /* Styles for phone resolutions */
@@ -110,10 +75,8 @@ export default {
     width: 40px;
     transition: background-color 0.3s;
   }
-
-  .logo img {
+  .logo {
     max-width: 150px;
-    object-fit: contain;
   }
   .nav {
     display: none;
