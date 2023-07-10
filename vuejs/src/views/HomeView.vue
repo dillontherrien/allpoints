@@ -48,5 +48,6 @@
   margin-top: 100vh;
   background-color: white;
   height: 100vh;
+  width: 100% !important;
 }
 </style>
