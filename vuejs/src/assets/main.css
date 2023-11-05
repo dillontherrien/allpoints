@@ -1,0 +1,14 @@
+@import './base.css';
+
+#app {
+  max-width: 1600px;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a,
+.blue {
+  text-decoration: none;
+  color: rgb(1, 0, 253);
+  transition: 0.4s;
+}
