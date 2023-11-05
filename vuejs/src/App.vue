@@ -13,8 +13,8 @@ import { RouterLink } from 'vue-router'
 
       <nav class="nav">
         <RouterLink class="nav-item white" to="/">Home</RouterLink>
-        <RouterLink class="nav-item white" to="/about">About Us</RouterLink>
         <RouterLink class="nav-item white" to="/services">Our Services</RouterLink>
+        <RouterLink class="nav-item white" to="/about">About Us</RouterLink>
         <RouterLink class="nav-item white" to="/contact">Contact Us</RouterLink>
       </nav>
     </div>
@@ -23,10 +23,7 @@ import { RouterLink } from 'vue-router'
   <div class="background-video">
     <div class="overlay"></div>
     <video autoplay muted loop>
-      <source
-        src="https://www.cageapp.com/public-cdn/site/production/assets/f40af30b6264395dee8a756b76bae75ca2e5d4ab/videos/cage-hero_background-1.mp4"
-        type="video/mp4"
-      />
+      <source src=".\assets\mow.mp4" type="video/mp4" />
     </video>
 
     <div class="text-overlay">
@@ -36,13 +33,91 @@ import { RouterLink } from 'vue-router'
   </div>
 
   <div class="content">
-    <h1>Welcome to My Website</h1>
-    <p>This is some sample content.</p>
-    <button>Click me</button>
+    <!-- <div class="title-text">Our Services</div> -->
+    <div class="services">
+      <div class="services-card">
+        <img class="service-card-image" alt="image of service" src="@/assets/service2.png" />
+        <div class="service-card-text">
+            <div class="service-card-text-title">Plowing</div>
+            <div class="service-card-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+      <div class="services-card">
+        <img class="service-card-image" alt="image of service" src="@/assets/service2.png" />
+        <div class="service-card-text">
+            <div class="service-card-text-title">Landscaping</div>
+            <div class="service-card-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+      <div class="services-card">
+        <img class="service-card-image" alt="image of service" src="@/assets/service2.png" />
+        <div class="service-card-text">
+            <div class="service-card-text-title">Hardscaping</div>
+            <div class="service-card-text-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.title-text {
+  color: #000;
+  font-size: 2rem;
+  text-align: center;
+}
+.services {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.services-card {
+border: 1px solid #eee;
+box-shadow: 0 2px 2px 0 rgba(0,0,0,0.05);
+border-radius: 0.5em;
+display: flex;
+flex-direction: column;
+margin-left: 1.5em;
+margin-right: 1.5em;
+margin-bottom: 2em;
+}
+
+.service-card-image {
+ max-height: 55em;
+ width: 100%;
+ max-width: 360px;
+ overflow: hidden;
+ border-radius: 0.25em 0.25em 0 0;
+ overflow-clip-margin: content-box;
+}
+
+.service-card-text {
+    padding: 2em;
+}
+
+.service-card-text-title {
+    font-size: 2em;
+    color: #4c4c4c;
+    margin: 0.3em 0;
+}
+
+.service-card-text-content {
+    min-height: 4em;
+    color: #4c4c4c;
+    line-height: 1.33em;
+    font-size: 1.33em;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-wrap: wrap;
+    max-width: 290px;
+}
 .header {
   display: flex;
   flex-direction: row;
@@ -129,6 +204,13 @@ import { RouterLink } from 'vue-router'
   .nav {
     display: none;
   }
+
+  .services {
+    padding-top: 0rem;
+  }
+  .services-card {
+    flex-basis: 100%;
+  }
 }
 
 .background-video {
@@ -176,8 +258,8 @@ import { RouterLink } from 'vue-router'
 }
 .content {
   margin-top: 100vh;
-  background-color: rgb(250, 249, 250);
-  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  /* height: 100%; */
   width: 100%;
   position: absolute;
   left: 0%;
